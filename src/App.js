@@ -74,7 +74,7 @@ function App() {
           }}
         >
           {!_.isEmpty(gitDetails) && <UserDetails userDetails={gitDetails}/>}
-          {!_.isEmpty(gists) && <UserGists userGists={gists}/>}
+          {!_.isEmpty(gists) && !_.isEmpty(gitDetails) && <UserGists userGists={gists} userDetails={gitDetails}/>}
         </Box>
       </main>
     </ThemeProvider>
