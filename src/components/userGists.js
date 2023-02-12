@@ -14,6 +14,7 @@ import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
 import _ from 'lodash';
 import moment from 'moment';
 import Gist from "./gistShow";
+import GistsForks from "./usersForks";
 
 const UserGists = ({userGists, userDetails}) => {
 
@@ -62,6 +63,7 @@ const UserGists = ({userGists, userDetails}) => {
                   </Typography>
                 </Grid>
               </Grid>
+              <GistsForks idGists={gist.id} />
               <Grid container spacing={3}>
                 <Grid item xs={12}>
                   <Accordion>
