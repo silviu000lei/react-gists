@@ -1,5 +1,6 @@
 import { Card, CardContent, Chip, Grid, Stack, Typography} from "@mui/material";
 import _ from 'lodash';
+import moment from 'moment';
 
 const UserGists = ({userGists, userDetails}) => {
 
@@ -37,7 +38,12 @@ const UserGists = ({userGists, userDetails}) => {
                 </Grid>
               </Grid>
               <Grid container spacing={3}>
-                <Grid item>
+                <Grid item xs={12}>
+                  <Typography variant='h4' sx={{fontSize: 14}} gutterBottom>
+                    Created {moment(gist.created_at).fromNow()}
+                  </Typography>
+                </Grid>
+                <Grid item xs={12}>
                   <Typography color="text.secondary" gutterBottom>
                     {(gist.description) || 'No Description'}
                   </Typography>
