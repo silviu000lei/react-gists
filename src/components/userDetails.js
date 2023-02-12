@@ -1,3 +1,4 @@
+import React from 'react';
 import {Avatar, Box, Container, Grid, Typography} from "@mui/material";
 
 const UserDetails = ({userDetails}) => {

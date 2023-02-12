@@ -1,4 +1,5 @@
 import './App.css';
+import React from 'react';
 import {AppBar, Autocomplete, Box, CssBaseline, Stack, TextField, Toolbar, Typography} from "@mui/material";
 import GitHubIcon from '@mui/icons-material/GitHub';
 import _ from 'lodash';

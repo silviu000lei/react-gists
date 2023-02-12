@@ -1,6 +1,19 @@
-import { Card, CardContent, Chip, Grid, Stack, Typography} from "@mui/material";
+import React from 'react';
+import {
+  Accordion,
+  AccordionDetails,
+  AccordionSummary,
+  Card,
+  CardContent,
+  Chip,
+  Grid,
+  Stack,
+  Typography
+} from "@mui/material";
+import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
 import _ from 'lodash';
 import moment from 'moment';
+import Gist from "./gistShow";
 
 const UserGists = ({userGists, userDetails}) => {
 
@@ -43,10 +56,26 @@ const UserGists = ({userGists, userDetails}) => {
                     Created {moment(gist.created_at).fromNow()}
                   </Typography>
                 </Grid>
-                <Grid item xs={12}>
+                <Grid item xs={12} pb={2}>
                   <Typography color="text.secondary" gutterBottom>
                     {(gist.description) || 'No Description'}
                   </Typography>
+                </Grid>
+              </Grid>
+              <Grid container spacing={3}>
+                <Grid item xs={12}>
+                  <Accordion>
+                    <AccordionSummary
+                      expandIcon={<ExpandMoreIcon />}
+                      aria-controls="panel1a-content"
+                      id="panel1a-header"
+                    >
+                      <Typography>Click to show</Typography>
+                    </AccordionSummary>
+                    <AccordionDetails>
+                      <Gist id={gist.id} />
+                    </AccordionDetails>
+                  </Accordion>
                 </Grid>
               </Grid>
             </CardContent>
